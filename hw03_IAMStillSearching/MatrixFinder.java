@@ -5,11 +5,10 @@
 
 /*
 First, we check the four corner values. We check if our target value CAN exist
-by checking if our target value is greater than the value at the top left or if
-our target is less than the value at the bottom. We also check the top right
-value to see if our target matches that. This eliminates a long "worst case."
+by checking if our target value is greater than or equal to the value at the top left and if our target is less than or equal to the value at the bottom. If our target does not lie within that range, we can return -1 without having to iterate through the array to find a value which cannot exist within it.
+We also check the top right value to see if our target matches that. This eliminates the longest "worst case."
 
-Then, if the target is in the array, but not at the three corners, we begin our
+Then, if we have found that the target is in the array, we begin our
 algorithm at the the lower left. If the value at this location is
 lower than the target, we check the value to the right of it (towards the larger
 values). If the value at this location is higher than the target, we check the
@@ -24,31 +23,29 @@ public class MatrixFinder
     int nCols = array[0].length;
     int curRow = nRows - 1;
     int curCol = 0;
-    String retStr = "";
+    String retStr = "(";
     //checks if the value is within the boundaries of the array
     if(array[nRows-1][nCols-1] < target || array[0][0] > target) {
       return "(-1,-1)";
     }
-    //checks if bottom right corner is equal to the target
-    else if(array[nRows - 1][nCols-1] == target) {
-      retStr += "(" + (nRows -1) + "," + (nCols -1) + ")";
-      return retStr;
-    }
+    
     //checks if top right (worst case) is equal to the target
     else if(array[0][nCols -1] == target) {
-      retStr += "(0," + (nCols -1) + ")";
+      retStr += "0," + (nCols -1) + ")";
       return retStr;
     }
+    
     else {
       while (curRow >= 0 && curCol < nCols) {
-        /*System.out.println(nRows);
+        /*Print statements for debugging --
+	System.out.println(nRows);
         System.out.println(nCols);
         System.out.println(curRow);
         System.out.println(curCol);*/
 
         //checks if value at current postion is equal to the target
         if (array[curRow][curCol] == target) {
-          retStr += "(" + curRow + "," + curCol + ")";
+          retStr += curRow + "," + curCol + ")";
           return retStr;
         }
         //if current value is smaller than target, move to the right 1 unit
@@ -61,10 +58,11 @@ public class MatrixFinder
         }
       }
       }
-    //will only return if the search finishes and did not find the target within
+    //will only return (-1, -1) if the search finishes and did not find the target within
     //the matrix. Thus, the target is not in the matrix.
     return "(-1,-1)";
     }
+    
     public static void main(String[] args) {
       //ascending by 1 matrix
       int[][] test = {{1,2,3},{4,5,6},{7,8,9}};
