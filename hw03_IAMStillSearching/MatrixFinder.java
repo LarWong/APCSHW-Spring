@@ -1,4 +1,4 @@
-//Team Wcubed (Larry Wong, Joshua Weiner, Eric Wong)
+//Team Walking in a Weiner Wongerland (Larry Wong, Joshua Weiner, Eric Wong)
 //APCS pd8
 //HW03 -- I Am Still Searching
 //2018-02-02
