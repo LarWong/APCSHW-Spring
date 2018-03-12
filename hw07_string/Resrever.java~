@@ -1,0 +1,33 @@
+/*
+Team <> (Larry Wong, Ying Xin Jiang)
+APCS2 pd8
+HW07 -- A Man, A Plan, A Canal: Panama!
+2018-02-13
+*/
+
+public class Resrever{
+
+    //Goal: "stressed"  ->  "desserts"
+
+    //O(log2n)
+    public static String reverseLog(String str){
+
+	if (str.length() == 1){
+	    return str;
+	}else{
+	    int length = str.length() / 2;
+	    return reverseLog(length) + reverseLog(str.substring(0,length))
+	}
+
+    }//end reverseLog
+
+    
+
+    public static void main(String[] args){
+
+	//Test cases
+	System.out.println(reverseLog("stressed"));
+
+    }//end main()
+
+}//end class
