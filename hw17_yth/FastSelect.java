@@ -98,41 +98,41 @@ public class FastSelect{
   public static void main(String[] args){
 /*
 //Test cases:
-    int[] arr0 = {0};
-    System.out.println(fastSelect(arr0, 1));//0
-
-    int[] arr1 = {1,0};
-    System.out.println(fastSelect(arr1, 1));//0
-
-    int[] arr2 = {2,7,4};
-    System.out.println(fastSelect(arr2, 2));//4
-
-    int[] arr3 = {3,8,8,6,9};
-    System.out.println(fastSelect(arr3, 2));//6
-
-    int[] arr4 = {4,7,2,6,8,1};
-    System.out.println(fastSelect(arr4, 6));//8
-
-    int[] arr5 = {4,7,2,6,8,1,7};
-    System.out.println(fastSelect(arr5, 1));//1
 */
 
+    int[] arr1 = {1,0};
+    System.out.println(fastSelect(arr1, 1));
+
+    int[] arr2 = {2,7,4};
+    System.out.println(fastSelect(arr2, 3));
+
+    int[] arr3 = {3,8,8,6,9};
+    System.out.println(fastSelect(arr3, 5));
+
+    int[] arr4 = {4,7,2,6,8,1};
+    System.out.println(fastSelect(arr4, 5));
+
+    int[] arr5 = {4,7,2,6,8,1,7};
+    System.out.println(fastSelect(arr5, 1));
+
+    /*
     //BEST CASES: ONLY RUNS ONCE
     System.out.println("Best:");
     int[] best0 = {1,2,3};
-    System.out.println(fastSelect(best0, 2));//2
+    System.out.println(fastSelect(best0, 2));
     int[] best1 = {1,2,3,4,5};
-    System.out.println(fastSelect(best1, 3));//3
+    System.out.println(fastSelect(best1, 3));
     int[] best2 = {1,2,3,4,5,6,7};
-    System.out.println(fastSelect(best2, 4));//4
+    System.out.println(fastSelect(best2, 4));
 
     //WORST CASES: RUNS n/2 times
     System.out.println("Worst:");
     int[] worst0 = {1,2,3,4};
-    System.out.println(fastSelect(worst0, 1));//2
+    System.out.println(fastSelect(worst0, 1));
     int[] worst1 = {1,2,3,4,5,6};
-    System.out.println(fastSelect(worst1, 1));//2
+    System.out.println(fastSelect(worst1, 1));
     int[] worst2 = {1,2,3,4,5,6,7,8};
-    System.out.println(fastSelect(worst2, 1));//2
+    System.out.println(fastSelect(worst2, 1));
+    */
   }
 }
